@@ -8,6 +8,9 @@ h1 {
   margin: 0 0 16px 0;
 }
 
+section {
+  padding: 64px 128px;
+}
 a {
   text-decoration: none;
   color: black;
@@ -34,7 +37,14 @@ a {
 #header h1 {
   margin: 0;
 }
-.landing p {
+
+#landing {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 18px;
+}
+#landing p {
   margin-bottom: 32px;
   font-size: 24px;
   color: gray;
