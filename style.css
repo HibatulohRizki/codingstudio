@@ -4,7 +4,7 @@
 }
 h1 {
   font-weight: 700;
-  font-size: 24px;
+  font-size: 32px;
   margin: 0 0 16px 0;
 }
 
@@ -12,6 +12,7 @@ a {
   text-decoration: none;
   color: black;
   margin: 0 0 16px 0;
+  font-size: 18px;
 }
 .btn {
   background-color: #ffc110;
@@ -24,9 +25,19 @@ a {
   margin-right: 16px;
   border: 2px solid #ffc110;
 }
-
+#header {
+  display: flex;
+  padding: 16px 128px;
+  align-items: center;
+  justify-content: space-between;
+}
+#header h1 {
+  margin: 0;
+}
 .landing p {
   margin-bottom: 32px;
+  font-size: 24px;
+  color: gray;
 }
 nav > a {
   margin-left: 15px;
