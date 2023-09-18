@@ -1,6 +1,9 @@
 * {
   font-family: "Montserrat";
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
 }
 h1 {
   font-weight: 700;
@@ -33,9 +36,14 @@ a {
   padding: 16px 128px;
   align-items: center;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 5;
 }
 #header h1 {
   margin: 0;
+  animation: bouncIn 1s infinite;
 }
 
 #landing {
@@ -56,6 +64,10 @@ nav > a {
   margin-left: 15px;
 }
 
+nav > a:hover {
+  color: #ffc110;
+}
+
 #about {
   display: flex;
   align-items: center;
@@ -71,7 +83,11 @@ nav > a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   text-align: center;
-  margin-top: 72px;
+  margin-top: 52px;
+}
+
+#about img {
+  width: 95%;
 }
 
 .about-stats-item {
@@ -95,6 +111,19 @@ nav > a {
   justify-content: space-between;
 }
 
+.service-header h1 {
+  position: relative;
+}
+.service-header h1::before {
+  content: "";
+  width: 60px;
+  height: 60px;
+  background: url(images/accent1.svg);
+  position: absolute;
+  left: -20px;
+  top: -10px;
+  z-index: -1;
+}
 .service-detail {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -105,18 +134,22 @@ nav > a {
 .service-detail-item {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 }
+
+.service-detail-item:hover {
+  transform: scale(1.15);
+}
 .service-detail-item img {
   width: 100%;
 }
 
 .service-detail-item h2 {
-  padding: 0 16px;
-  font-size: 18px;
+  padding: 0 16px 16px;
+  font-size: 16px;
 }
 
 .service-detail-item p {
-  font-size: 16px;
-  padding: 0 16px;
+  font-size: 14px;
+  padding: 0 16px 16px;
 }
 
 /* section contact */
@@ -126,6 +159,21 @@ nav > a {
   justify-content: space-between;
   margin-top: 72px;
   column-gap: 128px;
+}
+
+#contact h1 {
+  position: relative;
+}
+
+#contact > h1::before {
+  content: "";
+  width: 60px;
+  height: 60px;
+  background: url(images/accent2.svg);
+  position: absolute;
+  left: -20px;
+  top: -10px;
+  z-index: -1;
 }
 form {
   display: flex;
@@ -139,10 +187,6 @@ form h1 {
   text-align: center;
 }
 
-form button {
-  border: none;
-  cursor: pointer;
-}
 .form-group {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -152,6 +196,7 @@ form button {
     "email phone"
     "message message";
 }
+
 #input-name {
   grid-area: name;
 }
@@ -190,4 +235,102 @@ form button {
   font-size: 15px;
   outline: none;
   border-bottom: 1px solid black;
+}
+
+.input-group input:focus {
+  border-bottom: 2px solid #ffc110;
+}
+
+form button {
+  border: none;
+  cursor: pointer;
+}
+form button:hover {
+  border: none;
+  background-color: green;
+}
+/* footer */
+
+footer {
+  padding: 16px 128px;
+  background-color: #ffc110;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+footer p {
+  width: 50%;
+}
+
+.social-icon {
+  display: flex;
+  gap: 16px;
+}
+.social-icon img {
+  width: 30px;
+  height: 30px;
+}
+
+@keyframes bouncIn {
+  0% {
+    filter: opacity(0);
+    transform: translateY(-20);
+  }
+  35% {
+    filter: opacity(0.25);
+    transform: translateY(0);
+  }
+  75% {
+    filter: opacity(0.1);
+    transform: translateY(-10);
+  }
+  100% {
+    filter: opacity(1);
+    transform: translateY(0);
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  #header,
+  #footer {
+    padding: 16px 32px;
+  }
+  section {
+    padding: 64px 32px;
+  }
+
+  #landing {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  #landing > div {
+    width: 90%;
+  }
+
+  #about {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  #about img {
+    width: 75%;
+  }
+  #about > div {
+    width: 95%;
+  }
+  .service-detail {
+    gap: 16px;
+  }
+  .contact-detail {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    row-gap: 64px;
+  }
 }
