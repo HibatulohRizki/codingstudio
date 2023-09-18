@@ -118,3 +118,76 @@ nav > a {
   font-size: 16px;
   padding: 0 16px;
 }
+
+/* section contact */
+
+.contact-detail {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 72px;
+  column-gap: 128px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #ffc110;
+  padding: 64px 32px;
+}
+
+form h1 {
+  font-size: 28px;
+  text-align: center;
+}
+
+form button {
+  border: none;
+  cursor: pointer;
+}
+.form-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 32px;
+  grid-template-areas:
+    "name subject"
+    "email phone"
+    "message message";
+}
+#input-name {
+  grid-area: name;
+}
+#input-subject {
+  grid-area: subject;
+}
+
+#input-email {
+  grid-area: email;
+}
+
+#input-phone {
+  grid-area: phone;
+}
+
+#input-message {
+  grid-area: message;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-right: 12px;
+  column-gap: 32px;
+  margin-bottom: 32px;
+  border: none;
+}
+.input-group label {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.input-group input {
+  border: none;
+  font-size: 15px;
+  outline: none;
+  border-bottom: 1px solid black;
+}
